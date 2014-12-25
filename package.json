@@ -1,10 +1,11 @@
 {
-  "name": "pebanfield : portfolio",
+  "name": "pebanfield-portfolio",
   "version": "0.0.0",
   "description": "A portfolio of projects and work history.",
   "main": "server.js",
-  "repository": "",
+  "repository": "https://github.com/pebanfield/portfolio.git",
   "author": "Peter Emonds-Banfield <pebanfield@gmail.com>",
   "dependencies": {
+    "express": "^4.10.6"
   }
 }
