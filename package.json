@@ -1,0 +1,10 @@
+{
+  "name": "pebanfield : portfolio",
+  "version": "0.0.0",
+  "description": "A portfolio of projects and work history.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Peter Emonds-Banfield <pebanfield@gmail.com>",
+  "dependencies": {
+  }
+}
