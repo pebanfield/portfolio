@@ -56,5 +56,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3010);
+app.listen(process.env.PORT, process.env.IP);
 module.exports = app;
