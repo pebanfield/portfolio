@@ -1,12 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<spring:eval expression="@applicationProps['application.version']" var="applicationVersion"/>
-<spring:url value="/resources-{applicationVersion}" var="resourceUrl">
-    <spring:param name="applicationVersion" value="${applicationVersion}"/>
-</spring:url>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<tiles:importAttribute name="items"></tiles:importAttribute>
-<tiles:putAttribute name="id"></tiles:putAttribute>
 <div id="homeHeader">
  <div id="lichenLogo">
      &nbsp;<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="20" height="20">
@@ -24,7 +15,7 @@
     <div id="nav">
       <p> the page = ${id}</p>
      <ul id="navItems">
-      
+      <!--
        <c:forEach var="item" items="${items}">
          <c:choose>
            
@@ -39,6 +30,7 @@
          <li>|</li>
          </c:if>
        </c:forEach>
+       -->
      </ul>
   </div>
 </div>
