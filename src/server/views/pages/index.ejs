@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
-    <link rel="shortcut icon" href="/images/ibeam.ico" />
-    <link rel="stylesheet" href="/css/home.css" type="text/css"/>
+    <title>P.E. Banfield</title>
+    <link rel="shortcut icon" href="/img/ibeam.ico" />
+   <link rel="stylesheet" href="/css/home.css" type="text/css"/>
 </head>
 <body>
-<h1><%= title %></h1>
-<div id="contentContainer">
-    <div id="homeHeader">
-        <div id="lichenLogo"><a href="."><img src="/images/ibeamHeaderLogo.gif" /></a></div>
-        <div id="headerBg"></div>
-        <div id="nav">
-            <ul id="navItems">
-                <!--
-       <c:forEach var="item" items="${items}">
-          <c:choose>
-           <c:when test="${item.value == page}">
-           <li><a class="activeNav" href="${item.link}">${item.value}</a></li>
-           </c:when>
-           <c:otherwise>
-             <li><a class="nav" href="${item.link}">${item.value}</a></li>
-           </c:otherwise>
-         </c:choose>
-         <c:if test="${item.link  != '.'}">
-         <li>|</li>
-         </c:if>
-         </c:forEach>
-       -->
-            </ul>
-        </div>
-    </div>
-    <% include ../partials/header %>
-    <% include ../partials/body %>
-    <% include ../partials/footer %>
-</div>
+  <div id="contentContainer">
+    <% include ../partials/header %> 
+    <%if (activeItem.name === 'home') { %>
+      <% include ../pages/content/home %>
+    <% } %>
+    <%if (activeItem.name === 'about') { %>
+      <% include ../pages/content/about %>
+    <% } %>
+    <%if (activeItem.name === 'contact') { %>
+      <% include ../pages/content/contact %>
+    <% } %>
+    <%if (activeItem.name === 'projects') { %>
+      <% include ../pages/content/projects %>
+    <% } %>
+    <% include ../partials/footer %>   
+  </div>
 </body>
 </html>
