@@ -19,7 +19,9 @@ router.get('/', function(req, res) {
   res.render('pages/index', renderObj);
 });
 
-navItems.forEach(function(item){
+//render route handlers
+var routeHandlers = navItems.concat(['nowtv']);
+routeHandlers.forEach(function(item){
     router.get('/' + item.name, function(req, res) {
       renderObj.activeItem = item;
       res.render('pages/index', renderObj);
