@@ -1,3 +1,4 @@
+console.log("ok")
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,13 +6,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var exphbs  = require('express-handlebars');
+
+
 var routes = require('./routes/index');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
 var rootPath = __dirname.replace('/src/server', '');
 

@@ -7,7 +7,7 @@ var navItems =
    {name:'contact'}, 
    {name:'projects'}];
    
-navItems.reverse();
+navItems.reverse(); 
    
 var activeItem = navItems[0];
 
@@ -18,14 +18,19 @@ var renderObj =
 router.get('/', function(req, res) {
   res.render('pages/index', renderObj);
 });
-
-//render route handlers
-var routeHandlers = navItems.concat(['nowtv']);
-routeHandlers.forEach(function(item){
+/*
+//render main route handlers
+navItems.forEach(function(item){
     router.get('/' + item.name, function(req, res) {
       renderObj.activeItem = item;
       res.render('pages/index', renderObj);
     });
 });
+
+router.get('/nowtv', function(req, res){
+    renderObj.activeItem = {name: 'nowtv'};
+    res.render('pages/index', renderObj);
+});
+*/
 
 module.exports = router;
