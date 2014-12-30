@@ -1,0 +1,23 @@
+<div id="homeHeader">
+  <div id="pebLogo">
+   <a href=".">
+    <img src="/img/pebLogo.gif"></img>
+    <span>P.E. Banfield </span> 
+   </a>
+  </div>
+  <div id="headerBg"></div>
+  <div id="nav">
+    <ul id="navItems">
+      {{#each navItems}}
+        {{#equal active true}}
+          <li><a class="activeNav" href="{{name}}">{{name}}</a></li>
+        {{else}}
+          <li><a class="nav" href="{{name}}">{{name}}</a></li>
+        {{/equal}}
+        {{#compare name 'home' operator="!="}}
+        <li>|</li>
+        {{/compare}}
+       {{/each}}
+    </ul>
+  </div>
+</div>
