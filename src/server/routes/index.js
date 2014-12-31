@@ -43,7 +43,7 @@ navItems.forEach(function(item){
 });
 
 var projectPages = 
-  [{name:'nowtv'}, {name:'hds'}, {name:'iplayer'}, {name:'newsplayer'}];
+  [{name:'nowtv'}, {name:'hds'}, {name:'iplayer'}, {name:'newsplayer'}, {name: 'mls'}];
 
 projectPages.forEach(function(page){
   router.get('/' + page.name, function(req, res){
