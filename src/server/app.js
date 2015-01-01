@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -28,7 +28,7 @@ app.set('view engine', '.hbs');
 
 var rootPath = __dirname.replace('/src/server', '');
 
-app.use(favicon(rootPath + '/public/img/ibeam.ico'));
+//app.use(favicon(rootPath + '/public/img/ibeam.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
