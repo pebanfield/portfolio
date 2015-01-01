@@ -68,8 +68,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(process.env.PORT, process.env.IP);
+//app.listen(process.env.PORT, process.env.IP);
 
 console.log("app started on port - " + process.env.PORT);
-//app.listen(3000);
+app.listen(3000);
 module.exports = app;
