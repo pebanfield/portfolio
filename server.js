@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs  = require('express-handlebars');
-var conditionalHelpers = require(__dirname + '/src/server/helpers/conditionals.js');
+var conditionalHelpers = require(__dirname + '/helpers/conditionals.js');
 
 var hbs = exphbs.create({
     // Specify helpers which are only registered on this instance.
@@ -19,7 +19,7 @@ var hbs = exphbs.create({
 });
 
 
-var routes = require(__dirname+'/src/server/routes/index');
+var routes = require(__dirname+'/routes/index');
 
 var app = express();
 
