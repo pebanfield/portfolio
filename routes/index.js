@@ -42,10 +42,11 @@ navItems.forEach(function(item){
     });
 });
 
-var projectPages = 
+var pages = 
   [{name:'nowtv'}, {name:'hds'}, {name:'iplayer'}, {name:'newsplayer'}, {name: 'mls'}];
 
-projectPages.forEach(function(page){
+
+pages.forEach(function(page){
   router.get('/' + page.name, function(req, res){
     clearActive();
     res.render(page.name, menu);
