@@ -1,11 +1,12 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 //var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs  = require('express-handlebars');
-var conditionalHelpers = require('./helpers/conditionals.js');
+var conditionalHelpers = require(__dirname + '/helpers/conditionals.js');
 
 var hbs = exphbs.create({
     // Specify helpers which are only registered on this instance.
@@ -13,20 +14,21 @@ var hbs = exphbs.create({
         equal: conditionalHelpers.equalHelper, 
         compare: conditionalHelpers.compareHelper
     },
-    defaultLayout: 'main', 
+    defaultLayout: 'main',
     extname: '.hbs'
 });
 
 
-var routes = require('./routes/index');
+var routes = require(__dirname+'/routes/index');
 
 var app = express();
 
 // view engine setup
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
+app.set('views', __dirname + '/views');
 
-var rootPath = __dirname.replace('/src/server', '');
+var rootPath = __dirname.replace('/src/server/views', '');
 
 //app.use(favicon(rootPath + '/public/img/ibeam.ico'));
 app.use(logger('dev'));
@@ -51,6 +53,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
+      console.log("error = " + error);
     res.render('error', {
       message: err.message,
       error: err
@@ -70,6 +73,7 @@ app.use(function(err, req, res, next) {
 
 app.listen(process.env.PORT, process.env.IP);
 
-console.log("app started on port - " + process.env.PORT);
+//local port
+//console.log("app started on port - " + process.env.PORT);
 //app.listen(3000);
 module.exports = app;
