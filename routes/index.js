@@ -43,7 +43,7 @@ navItems.forEach(function(item){
 });
 
 var pages = 
-  [{name:'nowtv'}, {name:'hds'}, {name:'iplayer'}, {name:'newsplayer'}, {name: 'mls'}];
+  [{name:'nowtv'}, {name:'hds'}, {name:'iplayer'}, {name:'newsplayer'}, {name: 'mls'}, {name: 'lingua'}];
 
 
 pages.forEach(function(page){
